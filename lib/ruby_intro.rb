@@ -49,6 +49,7 @@ end
 
 def binary_multiple_of_4?(s)
   # YOUR CODE HERE
+  return true if s == "0"
   return false if s.empty?
   return false unless s =~ /^[01]+$/
   return s.end_with?('00')
@@ -64,8 +65,8 @@ class BookInStock
     @isbn = isbn
     @price = price
   end
-  attr_reader :isbn
-  attr_reader :price
+  attr_accessor :isbn
+  attr_accessor :price
 
   def price_as_string
     format("$%.2f", @price)
